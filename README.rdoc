@@ -1,0 +1,5 @@
+# README
+
+Please refer to INSTRUCTIONS.html for this project's instructions. Don't use
+the Rails server to load the file, instead just open it as a file in your
+browser (simply double-click on it)

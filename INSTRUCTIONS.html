@@ -1,0 +1,274 @@
+<html>
+<head>
+    <style>
+        html, body {
+            font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+            line-height: 1.5em;
+            color: #333;
+            padding: 30px 0;
+        }
+
+        h1 {
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+
+        h2 {
+            padding: 0 0 15px 0;
+            border-bottom: 1px solid #EEE;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        pre {
+            margin: 20px 0;
+            padding: 20px;
+            background: #FAFAFA;
+        }
+
+        code {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        span > code {
+            color: deeppink;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        span.tip > code {
+            color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+  <div id="container">
+    <h1>CcnCodeChallenge</h1>
+
+    <h2>Before Starting</h2>
+
+    <p>The goals of this exercise are to:</p>
+
+    <ul>
+        <li>Expose you to real problems that you will be expected to solve daily</li>
+        <li>Test your ability to write clean, conventional Rails code</li>
+        <li>Test your ability to write well-architected, performant code</li>
+        <li>Use RSpec to write test for the new code that you will be adding</li>
+    </ul>
+
+    <p>Before you submit your code, please make sure that both, the app and the tests, run with no problem.</p>
+
+    <p>If you are unable to finish to your satisfaction, then please ask for more time with reason rather
+      than submitting work you are not satisfied with.</p>
+
+    <p>
+        You should approach this project as if it was going to go
+        into production on a high-traffic website where millions of dollars are
+        flowing through the system. Indeed, we are interested in seeing what
+        your standard is for a project like this from a professional
+        engineering perspective.
+    </p>
+
+    <p>
+        We expect that, excluding time taken to set up your system, you should be
+        able to comfortably complete this exercise in roughly 3 to 6 hours.
+        You should go as fast as you can <u>without sacrificing quality in the submission</u>.
+         We would like to get a complete submission even if it takes a
+        bit longer than expected or if you want to work on it in parts. To that
+        end you have up to 3 days after receiving the project to finish. As
+        a benchmark, our solution took less than 3 hours to complete in a single
+        sitting and didn't need to extensively modify the application.
+    </p>
+
+    <p>
+        We expect you to adhere to best-practices with regard to Rails/Ruby
+        conventions, architecture, and patterns. We encourage you to research
+        your solution if you aren't sure of the best-practice. Feel free to
+        use any resources available to you.
+    </p>
+
+    <h2>System Requirements & Setup</h2>
+
+    <p>
+      This project requires Ruby 2.5.3 and Postgres 9.6.X to be installed on your system. If you're not familiar with
+      how to install Postgres, check out
+      <a href="https://www.codefellows.org/blog/three-battle-tested-ways-to-install-postgresql">this article</a>.
+    </p>
+
+    <p>To get started, change into the project's root directory and install all dependencies:</p>
+
+    <!-- @formatter:off -->
+    <pre><code>bundle install</code></pre>
+    <!-- @formatter:on -->
+
+    <p>Next, change your Postgres username and password in the <span><code>database.yml</code></span> file to
+        the appropriate settings for your system.</p>
+
+    <p>Now, create and migrate the database:</p>
+
+    <!-- @formatter:off -->
+    <pre><code>rake db:create; rake db:migrate; rake db:seed</code></pre>
+    <!-- @formatter:on -->
+
+    <p>Since we have removed the root git repository from the app, your final task should be to initialize
+        one and make your first commit.</p>
+
+    <!-- @formatter:off -->
+    <pre><code>git init; git add .; git commit</code></pre>
+    <!-- @formatter:on -->
+
+    <p>
+      At this point you should be good to go! If you run into any issues getting set up, please let us know ASAP.
+    </p>
+
+    <h2>Background</h2>
+
+    <p>
+      In a hypothetical world about 65 million years after the extinction of
+      the dinosaurs, there exists a company called Man Crates that has built a
+      rapidly-growing e-commerce business.
+    </p>
+
+    <p>
+      Up until now they've been handling fulfillment manually, keeping track of
+      stock on a spreadsheet and updating and tracking orders by hand. Man
+      Crates wants to start automating the fulfillment process to improve
+      efficiency, eliminate human error and improve customer satisfaction.
+    </p>
+
+    <h2>Features</h2>
+
+    <h3>#1: Order Form</h3>
+
+    <p>
+      To get started, we'd like to create an order form that lets customer
+      service enter orders on behalf of the customer. This form should let a
+      customer service representative select a product, enter a customer name,
+      and then click a button to create the order.
+    </p>
+
+    <p>
+      You'll need to create an <span><code>Order</code></span> model to implement this form.
+      In addition to the product and customer name, <span><code>Order</code></span> should
+      have a <span><code>status</code></span> attribute that's initially set to
+      <span><code>processing</code></span> and a <span><code>created_at</code></span> date.
+    </p>
+
+    <p>
+      To keep things simple, you can assume that each <span><code>Order</code></span> has only
+      one <span><code>Product</code></span>. We've also created the <span><code>Product</code></span> model
+      for you already!
+    </p>
+
+    <h3>#2: Admin Order Search</h3>
+
+    <p>
+      Various folks within the company need to browse orders to handle
+      customer support requests, debug the system, or analyze the business. To
+      that end, we want to give them the ability to easily search for orders
+      and filter them based on various criteria.
+    </p>
+
+    <p>
+      We'd like to build this interface using a server-generated page.
+    </p>
+
+    <p><span class="tip"><code>TIP:</code></span>
+      We don't want to let anyone outside the company view the orders
+      dashboard. <b>Choose and implement a method to secure the order search
+      page. You can use any method you want, but be sure to comment about any
+    shortcomings of the method you choose.</b>
+    </p>
+
+    <h3>#3: Automatic Shipping Status Updates</h3>
+
+    <p>
+      Man Crates ships its products to customers via FedEx, which has an API to
+      check the status of a particular shipment. We want to make sure that
+      every order has the correct shipping status at all times.
+    </p>
+
+    <p>
+      When a order is processed, folks at the distribution center pack it all
+      up and set it up for shipping by getting an ID from FedEx and slapping a
+      label with said ID on the box. FedEx comes by once a day to pick up all
+      orders that are awaiting pickup, magically moves them all over the
+      country, and eventually delivers them to our customers' front doors.
+    </p>
+
+    <p>
+      We want to check the status of each open order every 15 minutes. Because
+      this involves querying a third-party API, it's a good use case for an
+      asynchronous process, which means we're going to use ActiveJob.
+    </p>
+
+    <p>
+      We've created a stub job already. <b>You should implement the
+      <span><code>perform</code></span> method:</b>
+    </p>
+
+    <!-- @formatter:off -->
+    <pre><code>
+    class UpdateShippingStatusJob < ActiveJob::Base
+        def perform
+            # IMPLEMENT ME
+        end
+    end
+    </code></pre>
+    <!-- @formatter:on -->
+
+    <p>
+      You can assume that an order transitions through the following states on
+      the FedEx side: <span><code>awaiting_pickup</code></span>,
+      <span><code>in_transit</code></span>,
+      <span><code>out_for_delivery</code></span>, and
+      <span><code>delivered</code></span>. You should use the same names in your
+      code.
+    </p>
+
+    <p>
+      You can also assume that any order not in the
+      <span><code>processing</code></span> state (the default state) will have
+      a valid <span><code>fedex_id</code></span>.
+    </p>
+
+    <p>
+      After processing a succesful batch of orders, send an email to the operations manager (configurable recipient in env).
+    </p>
+
+    <p>
+      We've implemented a FedEx client library in
+      <span><code>lib/fedex.rb</code></span> already for you, which you should
+      use to get an order's current shipping status from FedEx. You should also
+      use this library to create a shipment for an order if the shipment
+      doesn't exist. Here's the <a href='doc/Fedex.html'>documentation</a> for
+      <span><code>lib/fedex.rb</code></span>.
+    </p>
+
+    <p><span class="tip"><code>TIP:</code></span>
+      Think about how to write the job in a way that is memory-efficient and
+      performant. It could easily be the case that there are tends of thousands
+      of orders that require shipping status updates at any given time.
+    </p>
+
+    <p><span class="tip"><code>TIP:</code></span>
+      <b>You shouldn't directly modify this <code>lib/fedex.rb</code>, despite any
+      shortcomings.</b> Instead find other ways to ensure that the
+      <span><code>perform</code></span> method can handle whatever cases might
+      arise from using <span><code>lib/fedex.rb</code></span>
+    </p>
+    <p>
+      <strong><span><code>IMPORTANT NOTES:</code></span></strong>
+      - Squash all work in a single commit
+      - Add specs for every class and method you add
+      - Make the code speak for you i.e. make sure you are demonstrating all your awesome dev skills
+    </p>
+  </div>
+</body>
+</html>
