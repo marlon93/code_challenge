@@ -1,0 +1,74 @@
+es:
+  alerts:
+    require_login: 'Debes iniciar sesión para continuar'
+    invalid_credentials: 'Email o contraseña inválida'
+    logout_success: 'Has cerrado sesión'
+  controllers:
+    registrations:
+      create: 'Cuenta creada exitosamente'
+    sessions:
+      welcome: 'Bienvenido!'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'no puede estar en blanco'
+              taken: 'ya está en uso'
+              invalid: 'no es un formato de correo válido'
+            password:
+              too_short: 'es demasiado corta (mínimo %{count} caracteres)'
+              invalid: 'debe incluir al menos una mayúscula, una minúscula, un número y un carácter especial'
+        order:
+          attributes:
+            product_id:
+              blank: 'Debe seleccionar un producto'
+            customer_name:
+              blank: 'El nombre del cliente no puede estar vacío'
+            status:
+              blank: 'El estado no puede estar vacío'
+            carrier_name:
+              blank: 'El nombre del transportista no puede estar vacío'
+
+  sessions:
+    new:
+      title: 'Iniciar Sesión'
+      email: 'Correo electrónico'
+      password: 'Contraseña'
+      submit: 'Entrar'
+      signup_link: 'Crear cuenta'
+  orders:
+    index:
+      title: 'Órdenes'
+      new_order: 'Nueva Orden'
+    new:
+      title: 'Nueva Orden'
+    edit:
+      title: 'Editar Orden'
+    form:
+      submit: 'Guardar Orden'
+      customer_name: 'Nombre del Cliente'
+      product: 'Producto'
+    show:
+      title: 'Detalles de la Orden'
+    destroy:
+      confirm: '¿Estás seguro?'
+      success: 'Orden eliminada con éxito.'
+    create:
+      success: 'Orden creada con éxito.'
+      error: 'No se pudo crear la orden: %{errors}'
+    update:
+      success: 'Orden actualizada con éxito.'
+      error: 'No se pudo actualizar la orden: %{errors}'
+    filters:
+      title: "Filtrar Ordenes"
+      customer_name: "Nombre del Cliente"
+      status: "Estado"
+      select_status: "Seleccione estado"
+      from_date: "Desde Fecha"
+      to_date: "Hasta Fecha"
+      product_name: "Nombre del Producto"
+      advanced_filters: "Filtros Avanzados"
+      search: "Buscar"
+      clear: 'Limpiar'

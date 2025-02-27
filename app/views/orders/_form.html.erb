@@ -1,0 +1,15 @@
+<%= form_with(model: @order, local: true, class: "space-y-4") do |form| %>
+  <div>
+    <%= form.label :customer_name, t('orders.form.customer_name'), class: "block font-medium" %>
+    <%= form.text_field :customer_name, class: "w-full border p-2" %>
+  </div>
+
+  <div>
+    <%= form.label :product_id, t('orders.form.product'), class: "block font-medium" %>
+    <%= form.collection_select :product_id, @products, :id, :name, { prompt: "Select a product" }, class: "w-full border p-2" %>
+  </div>
+
+  <div>
+    <%= form.submit t('orders.form.submit'), class: "bg-blue-500 text-white p-2 rounded" %>
+  </div>
+<% end %>
