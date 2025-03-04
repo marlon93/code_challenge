@@ -1,33 +1,73 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  alerts:
+    require_login: 'You must log in to continue'
+    invalid_credentials: 'Invalid email or password'
+    logout_success: 'You have logged out'
+  controllers:
+    registrations:
+      create: 'Account successfully created'
+    sessions:
+      welcome: 'Welcome!'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "can't be blank"
+              taken: "is already taken"
+              invalid: "is not a valid email format"
+            password:
+              too_short: "is too short (minimum %{count} characters)"
+              invalid: "must include at least one uppercase letter, one lowercase letter, one number, and one special character"
+        order:
+          attributes:
+            product_id:
+              blank: 'Product must be selected'
+            customer_name:
+              blank: 'Customer name cannot be blank'
+            status:
+              blank: 'Status cannot be blank'
+            carrier_name:
+              blank: 'Carrier name cannot be blank'
+  sessions:
+    new:
+      title: 'Log In'
+      email: 'Email'
+      password: 'Password'
+      submit: 'Sign In'
+      signup_link: 'Sign Up'
+  orders:
+    index:
+      title: 'Orders'
+      new_order: 'New Order'
+    new:
+      title: 'New Order'
+    edit:
+      title: 'Edit Order'
+    form:
+      submit: 'Save Order'
+      customer_name: 'Customer Name'
+      product: 'Product'
+    show:
+      title: 'Order Details'
+    destroy:
+      confirm: 'Are you sure?'
+      success: 'Order deleted successfully.'
+    create:
+      success: 'Order created successfully.'
+      error: 'Failed to create order: %{errors}'
+    update:
+      success: 'Order updated successfully.'
+      error: 'Failed to update order: %{errors}'
+    filters:
+      title: "Filter Orders"
+      customer_name: "Customer Name"
+      status: "Status"
+      select_status: "Select status"
+      from_date: "From Date"
+      to_date: "To Date"
+      product_name: "Product Name"
+      advanced_filters: "Advanced Filters"
+      search: "Search"
+      clear: 'Clear'

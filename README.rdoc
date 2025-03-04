@@ -1,5 +1,59 @@
-# README
+# Ruby on Rails Project
 
-Please refer to INSTRUCTIONS.html for this project's instructions. Don't use
-the Rails server to load the file, instead just open it as a file in your
-browser (simply double-click on it)
+## Prerequisites
+
+Make sure you have installed:
+- Ruby
+- Bundler
+- Redis (for Sidekiq)
+- PostgreSQL (or the database you are using)
+
+## Installation
+
+1. Install project dependencies:
+   ```sh
+   bundle install
+   ```
+
+2. Copy environment variables:
+   ```sh
+   cat .env.sample >> .env
+   ```
+
+3. Set up the database:
+   ```sh
+   rails db:create
+   rails db:migrate
+   ```
+
+4. Optionally, load initial data:
+   ```sh
+   rails db:seed
+   rails runner db/seeds/users.rb
+   ```
+
+## Running the Application
+
+1. Start Sidekiq for background processing:
+   ```sh
+   bundle exec sidekiq
+   ```
+
+2. Build TailwindCSS styles:
+   ```sh
+   rails tailwindcss:build
+   ```
+
+3. Start the Rails server:
+   ```sh
+   rails server
+   ```
+
+## Additional Notes
+
+- Ensure Redis is running before starting Sidekiq.
+- You can modify the seed data in `db/seeds/` as needed.
+- For more details about the application, check the internal documentation or source code.
+
+Happy coding! 🚀
+

@@ -1,0 +1,4 @@
+:schedule:
+  update_shipping_status:
+    cron: "*/15 * * * *"
+    class: "Order::UpdateShippingStatusJob"
